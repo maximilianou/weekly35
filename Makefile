@@ -30,4 +30,11 @@ step06:
 step07:
 	docker stop weekly35_products
 	docker stop weekly35_cart
+step08:
+	docker push maximilianou/products
+	docker push maximilianou/cart
+step09:
+	mkdir k8s && cd k8s && kubectl create deploy products --image=maximilianou/products --dry-run=client -o yaml > products-definition.yaml
+	cd k8s && kubectl create deploy cart --image=maximilianou/cart --dry-run=client -o yaml > cart-definition.yaml
+
 

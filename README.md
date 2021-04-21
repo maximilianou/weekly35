@@ -1,9 +1,13 @@
 # weekly35
 
-
 ## skafforld.dev 
 
 ## Makefile
+- Create projects nodejs
+- start k8s
+- login dockerhub
+- Dockerfile Start/Stop named containers
+- Dockerfile Parameter passing
 ## Dockerfile
 
 - Makefile
@@ -85,3 +89,4 @@ app.get('/api/products', (req, res) => {
 })
 app.listen( process.env.PORT, () => console.log(`Listening in http://localhost:${process.env.PORT}/api/products`))
 ```
+
