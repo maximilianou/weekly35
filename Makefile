@@ -36,5 +36,10 @@ step08:
 step09:
 	mkdir k8s && cd k8s && kubectl create deploy products --image=maximilianou/products --dry-run=client -o yaml > products-definition.yaml
 	cd k8s && kubectl create deploy cart --image=maximilianou/cart --dry-run=client -o yaml > cart-definition.yaml
-
-
+step10:
+	kubectl create -f products-definition.yaml 
+	kubectl create -f k8s/cart-definition.yaml
+step11:
+	cd k8s && kubectl run nginx --image=nginx  -it --restart=Never -- /bin/sh
+step12:
+	kubectl get all

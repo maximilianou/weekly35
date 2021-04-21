@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: products
+  name: cart
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: products
+      app: cart
   template:
     metadata:
       labels:
-        app: products
+        app: cart
     spec:
       containers:
-      - image: maximilianou/products
-        name: products
+      - image: maximilianou/cart
+        name: cart
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: products-service
+  name: cart-service
 spec:
   selector:
-    app: products
+    app: cart
   ports:
   - protocol: TCP
-    port: 3000
-    targetPort: 3000
+    port: 3001
+    targetPort: 3001

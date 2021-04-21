@@ -1,0 +1,28 @@
+apiVersion: skaffold/v2beta14
+kind: Config
+metadata:
+  name: shop-skaffold
+build:
+  artifacts:
+  - image: maximilianou/cart
+    context: cart
+    sync: 
+      manual: 
+      - src: "src/**/*.js"
+        dest: "."
+    docker:
+      dockerfile: Dockerfile
+  - image: maximilianou/products
+    context: products
+    sync: 
+      manual: 
+      - src: "src/**/*.js"
+        dest: "."
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - k8s/cart-definition.yaml
+    - k8s/ingress.yaml
+    - k8s/products-definition.yaml
