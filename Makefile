@@ -1,5 +1,5 @@
 # skaffold.dev
-.PHONE= init 
+.PHONY= init 
 
 k8start:
 	minikube start &
@@ -9,7 +9,6 @@ dockerlogin:
 	docker login
 dockerlogout:
 	docker logout
-
 step01: products
 	mkdir products cart && cd products
 step02: step01
