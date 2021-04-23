@@ -42,4 +42,13 @@ step10:
 step11:
 	cd k8s && kubectl run nginx --image=nginx  -it --restart=Never -- /bin/sh
 step12:
-	kubectl get all
+	clear && kubectl get all --all-namespaces &&  echo '\n----\nClean this please!\n----\n'
+step13:
+	kubectl get all --all-namespaces | less
+
+step15:
+	skaffold dev
+	#skaffold run
+	#skaffold delete
+	#skaffold build
+	#skaffold deploy

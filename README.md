@@ -519,4 +519,32 @@ Watching for changes...
 [products] Listening in http://localhost:3000/api/products
 ```
 
+- kubectl delete pod nginx
+```
+:~/projects/weekly35$ kubectl delete pod nginx
+pod "nginx" deleted
 
+```
+
+https://kubernetes.github.io/ingress-nginx/deploy/
+- minikube enabled
+```
+:~/projects/weekly35$ minikube addons enable ingress
+
+( In minikube the ingress addon is installed 
+  in the namespace kube-system 
+  instead of ingress-nginx )
+
+```
+
+- AWS - https://kubernetes.github.io/ingress-nginx/deploy/
+- GCE-GKE - https://kubernetes.github.io/ingress-nginx/deploy/
+- Azure - https://kubernetes.github.io/ingress-nginx/deploy/
+- Bare-metal - https://kubernetes.github.io/ingress-nginx/deploy/
+
+------------------------------------------
+- Get Every Kube Pod/Service.. list!
+```
+:~/projects/weekly35$ kubectl get all --all-namespaces
+```
+------------------------------------------

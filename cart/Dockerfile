@@ -9,4 +9,5 @@ RUN npm install
 COPY . .
 ARG PORT=3001
 ENV PORT=${PORT} 
+EXPOSE ${PORT}
 CMD "npm" "start"
